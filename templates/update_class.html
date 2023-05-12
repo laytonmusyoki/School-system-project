@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title  %} {{title}} {% endblock %}
+
+{% block content %}
+
+<section class="sec">
+            <div class="box5">
+                <div class="frame">
+                    <h1>Update class</h1>
+
+                    <div class="inputs">
+                        <form action="" method="POST">
+                            <input type="text" name="class_no" placeholder="Enter class no." value="{{class_no}}">
+                            <input type="text" name="name" placeholder="Enter class name" value="{{name}}">
+                            <input type="text" name="teacher" placeholder="Enter classteacher" value="{{teacher}}">
+                            <input type="submit" class="bg" value="Update class">
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

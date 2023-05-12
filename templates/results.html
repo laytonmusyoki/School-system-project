@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title  %} {{title}} {% endblock %}
+
+{% block content %}
+
+<section class="sec">
+    <div class="row">
+        <div class="col-4">
+            <div class="box3">
+                <div class="frame">
+                    <h1>STUDENT GRADE EVALUATION</h1>
+                    <div class="select">
+                        <h4>class</h4>
+
+                        <form action="" method="POST">
+                            <select name="class" id="">
+                                <option value="">---SELECT CLASS---</option>
+                                <option value="Form one">Form one</option>
+                                <option value="Form two">Form two</option>
+                                <option value="Form three">Form three</option>
+                                <option value="Form four">Form four</option>
+                            </select>
+                    </div>
+                    <div class="marks">
+                            <h3>Enter marks scored per subject</h3>
+                        <input type="text" placeholder="STUDENT FULL NAME" name="name" required>
+                        <input type="text" placeholder="STUDENT ADMISSION NUMBER" name="adm" required>
+                        <input type="text" placeholder="Mathematic" name="maths" required>
+                        <input type="text" placeholder="English" name="eng" required>
+                        <input type="text" placeholder="Kiswahili" name="kisw" required>
+                        <input type="text" placeholder="Chemistry" name="chem" required>
+                        <input type="text" placeholder="Biology / Physics" name="scie" required>
+                        <input type="text" placeholder="Geography/C.R.E" name="humanities" required>
+                        <input type="text" placeholder="Agriculture/Computer" name="tech" required>
+                        <input type="text" placeholder="History/ French" name="french" required>
+                        <button type="submit" class="calculate">CALCULATE</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="box4">
+                <div class="frame">
+                    <h1>Student result SLIP</h1>
+                    <div class="school">
+                        <h3>SCHOOL:<p>Makueni Boys' </p>  </h3>
+                        <h3>CLASS:<p> {{clas}}</p></h3>
+                    </div>
+                    <div class="slip">
+                        <h3>Name: <p> {{name}}</p></h3>
+                        <h3>Adm NO: <p> {{adm}}</p></h3>
+                        <h3>Marks scored: <p> {{total}}</p></h3>
+                        <h3>Average: <p>{{average}}</p></h3>
+                        <h3>Grade: <p> {{grade}} </p></h3>
+                        <h3>Remarks: <p> {{remark}}</p></h3>
+                    </div>
+                    <button class="slipbtn">Print slip</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

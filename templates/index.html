@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {{title}}  {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <script src="https://kit.fontawesome.com/8a42449199.js" crossorigin="anonymous"></script>
+    
+    
+<style>
+.section{
+    /*  */
+    background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url("{{url_for('static',filename='image/sch4.jpg')}}");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+   
+</style> 
+
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1>MBHS HIGH </h1>
+                </div>
+                <div class="account">
+                    <ul>
+                        <li><a href="{{ url_for('login')}}"><i class="fa-thin fa-user"></i> Login</a></li>
+                        <li><a href="{{ url_for('register')}}">Sign up</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container6">
+                <h1>MAKUENI BOY'S  <br> HIGH SCHOOL</h1>
+                <h2>Passion propels perfomance</h2>
+            </div>
+        </div>
+        
+       
+    </section>
+</body>
+</html>

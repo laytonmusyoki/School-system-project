@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title  %} {{title}} {% endblock %}
+
+{% block content %}
+
+<section class="sec">
+        <div class="col-4">
+            <div class="box6">
+                <div class="frame">
+                    <h1>MAIL SENDING....</h1>
+                    <div class="frames">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category,message in messages %}
+                                        <div class="message-{{ category }}">
+                                            {{ message }}
+                                        </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+
+                    <div class="select">
+                        <h4>class</h4>
+
+                        <form action="" method="POST">
+                            <select name="email" id="">
+                                <option value="">---SELECT ---</option>
+                                <option value="form one">Form one parents</option>
+                                <option value="form two">Form two parents</option>
+                                <option value="form three">Form three parents</option>
+                                <option value="form four">Form four parents</option>
+                                <option value="staff">Teaching staff</option>
+                                <option value="non staff">Non teaching staff</option>
+
+
+                            </select>
+                    </div>
+
+                    <div class="card2">
+                        <h3>Type your message below: </h3>
+                            <input type="text"placeholder="Message subject" name="subject" required>
+                        <textarea name="message" id="" cols="30" rows="10" placeholder="Type message here..." required></textarea>
+                        <button type="submit" class="sendbtn">Send</button>
+                        </form>
+                    </div>
+
+                    {{email}}
+ 
+                </div>
+            </div>
+        </div>
+</section>
+
+{% endblock %}

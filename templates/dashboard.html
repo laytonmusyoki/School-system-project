@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title  %} {{title}} {% endblock %}
+
+
+{% block content %}
+
+<section class="dashboard">
+    <div class="container1">
+        <div class="row">
+            <!-- card start -->
+            <div class="col-3">
+                <a href="{{ url_for('student') }}">
+                    <div class="card">
+                        <h3>Student manager</h3>
+                        <div class="image">
+                            <img src="{{ url_for('static',filename='image/Student.jpg') }}">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- end -->
+
+            <!-- card start -->
+            <div class="col-3">
+                <a href="{{ url_for('classmanager') }}">
+                    <div class="card">
+                        <h3>Class manager</h3>
+                        <div class="image">
+                            <img src="{{ url_for('static',filename='image/class.jpg') }}">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- end -->
+
+            <!-- card start -->
+            <div class="col-3">
+                <a href="{{ url_for('resultmanager') }}">
+                    <div class="card">
+                        <h3>Result manager</h3>
+                        <div class="image">
+                            <img src="{{ url_for('static',filename='image/Results.jpg') }}">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- end -->
+
+
+
+            <!-- card start -->
+            <div class="col-3">
+                <a href="{{ url_for('subject') }}">
+                    <div class="card">
+                        <h3>Subject manager</h3>
+                        <div class="image">
+                            <img src="{{ url_for('static',filename='image/subject.jpg') }}">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- end -->
+
+
+
+
+            <!-- card start -->
+            <div class="col-3">
+                <a href="{{ url_for('staffportal') }}">
+                    <div class="card">
+                        <h3>Staff portal</h3>
+                        <div class="image">
+                            <img src="{{ url_for('static',filename='image/staffs.jpg') }}">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- end -->
+
+
+            <!-- card start -->
+            <div class="col-3">
+                <a href="">
+                    <div class="card">
+                        <h3>Workers manager</h3>
+                        <div class="image">
+                            <img src="{{ url_for('static',filename='image/Workers.jpg') }}">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- end -->
+
+            <!-- card start -->
+            <div class="col-3">
+                <a href="">
+                    <div class="card">
+                        <h3>B.O.M manager</h3>
+                        <div class="image">
+                            <img src="{{ url_for('static',filename='image/board.jpg') }}">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- end -->
+
+
+            <!-- card start -->
+            <div class="col-3">
+                <a href="{{ url_for('setting') }}">
+                    <div class="card">
+                        <h3>Password-reset</h3>
+                        <div class="image">
+                            <img src="{{ url_for('static',filename='image/pwd.jpg') }}">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- end -->
+
+            <!-- card start -->
+            <div class="col-3">
+                <a href="{{ url_for('mails') }}">
+                    <div class="card">
+                        <h3>Mails</h3>
+                        <div class="image">
+                            <img src="{{ url_for('static',filename='image/mail.jpg') }}">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- end -->
+
+            
+            
+        </div>
+    </div>
+</section>
+{% endblock %}

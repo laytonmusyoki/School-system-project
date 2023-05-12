@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title  %} {{title}} {% endblock %}
+
+{% block content %}
+
+
+<div class="container5">
+    <div class="inputs">
+        <form action="" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" name="name" placeholder="Enter your name" required>
+            <label for="name">Class:</label>
+            <input type="text" name="class" placeholder="Enter the class" required>
+            <label for="name">Subject:</label>
+            <input type="text" name="subject" placeholder="Subject teaching" required>
+            <label for="name">Term:</label>
+            <input type="text" name="term" placeholder="Enter term" required>
+            <label for="name">Date:</label>
+            <input type="date" name="date" placeholder="Enter date" required>
+            <label for="name">Report:</label>
+            <textarea name="report" id="" cols="30" rows="10" placeholder="Type your report" required></textarea>
+            <button type="submit" class="sendbtn">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

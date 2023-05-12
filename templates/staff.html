@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title  %} {{title}} {% endblock %}
+
+{% block content %}
+
+<section class="portal">
+    <div class="notification">
+        <marquee behavior="" direction=""><h3>To all teachers remember to give monthly class reports as follows</h3></marquee>
+    </div>
+    <div class="frames5">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category,message in messages %}
+                        <div class="message-{{ category }}">
+                            {{ message }}
+                        </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    </div>
+    <div class="btn">
+        <a href="{{url_for('add')}}"><button type="button">Add report</button></a>
+    </div>
+    <div class="table2">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Class</th>
+                    <th>Subject</th>
+                    <th>Term</th>
+                    <th>Syllabus coverage</th>
+                    <th>Last update</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in report %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[7] }}</td>
+                    <td>{{ row[6] }}</td>
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {{title}}  {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <script src="https://kit.fontawesome.com/8a42449199.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1>MBHS HIGH </h1>
+                </div>
+                <div class="account">
+                    <ul>
+                        <li><a href="{{ url_for('login')}}"><i class="fa-solid fa-user"></i> Login</a></li>
+                        <li><a href="{{ url_for('register')}}">Sign up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<div class="box1">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category,message in messages %}
+                            <div class="message-{{ category }}">
+                                {{ message }}
+                            </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    <h1>Login</h1>
+    
+    <div class="group">
+        <div class="icon">
+            <img src="{{ url_for('static',filename='image/lock.jpg') }}">
+        </div>
+        <div class="input-group1">
+
+            <form action="" method="POST">
+                <input type="text" name="username" placeholder="Enter your username" value="{{username}}">
+                <input type="password" name="password" placeholder="Enter your password" value="{{password}}">
+                <input type="submit" value="Login" class="signup">
+            </form>
+        </div>
+    </div>
+    
+</div>
+

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title  %} {{title}} {% endblock %}
+
+{% block content %}
+
+<section class="sec">
+        <div class="col-4">
+            <div class="box6">
+                <div class="frame">
+                    <h1>SUBJECTS OFFERED IN THE SCHOOL</h1>
+                    
+
+                    <div class="frames">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category,message in messages %}
+                                        <div class="message-{{ category }}">
+                                            {{ message }}
+                                        </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+
+                    <div class="row5">
+                    <div class="subjects">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Code</th>
+                                    <th>Subject</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for sbj in subjects %}
+                            <tr>
+                                <td>{{sbj[0]}}</td>
+                                <td>{{sbj[1]}}</td>
+                                <td>{{sbj[2]}}</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                
+                    <div class="sbjadd">
+                        <h2>Add subject</h2>
+                        <form action="" method="POST">
+                            <input type="text" placeholder="Subject code" name="code">
+                            <input type="text" placeholder="Subject" name="subject">
+                            <button type="submit" class="sendbtn">Add</button>
+                        </form>
+                    </div>
+                </div>
+                    
+ 
+                </div>
+            </div>
+        </div>
+</section>
+
+{% endblock %}

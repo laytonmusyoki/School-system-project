@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title  %} {{title}} {% endblock %}
+
+{% block content %}
+
+<section class="sec">
+    <div class="row">
+        <div class="col-4">
+            <div class="box3">
+                <div class="frame">
+                    <h1>STUDENT MANAGEMENT</h1>
+
+                    <div class="frames">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category,message in messages %}
+                                    <div class="message-{{ category }}">
+                                        {{ message }}
+                                    </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+
+                    <div class="select">
+                        <h4>class</h4>
+
+                        <form action="">
+                            <select name="" id="">
+                                <option value="">---SELECT CLASS---</option>
+                                <option value="">Form one</option>
+                                <option value="">Form two</option>
+                                <option value="">Form three</option>
+                                <option value="">Form four</option>
+                            </select>
+                        </form>
+
+                    </div>
+
+                    
+                    <div class="table">
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Adm No.</th>
+                                    <th>Name</th>
+                                    <th>Class</th>
+                                    <th>Gurdian email</th>
+                                    <!-- <th>Date admitted</th> -->
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in students %}
+                                <tr>
+                                    <td>{{ row[0] }}</td>
+                                    <td>{{ row[1] }}</td>
+                                    <td>{{ row[2] }}</td>
+                                    <td>{{ row[3] }}</td>
+                                    <td>{{ row[4] }}</td>
+                                    <!-- <td>{{ row[5] }}</td> -->
+                                    <td>
+                                        <a href="{{ url_for('update',id=row[0]) }}" class="edit">Edit</a>
+                                        <a href="{{ url_for('delete',id=row[0]) }}" onclick="return confirm('Are you sure you want to delete ?')" class="del">Delete</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="box4">
+                <div class="frame">
+                    <h1>Add New Student</h1>
+
+                   
+
+                    <div class="inputs">
+                        <form action="" method="POST">
+                            <input type="text" name="adm" placeholder="Given admission no.">
+                            <input type="text" name="name" placeholder="Name of student">
+                            <input type="text" name="email" placeholder="Gurdian email">
+                            <input type="text" name="class" placeholder="Class assigned">
+                            <input type="submit" class="bg" value="Add student">
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

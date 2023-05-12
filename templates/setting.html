@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title  %} {{title}} {% endblock %}
+
+{% block content %}
+
+<section class="sec">
+    <div class="col-4">
+        <div class="box6">
+            <div class="frame">
+                <h1>PERSONAL DETAILS</h1>
+
+                <div class="frames">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category,message in messages %}
+                                    <div class="message-{{ category }}">
+                                        {{ message }}
+                                    </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+
+                <div class="img">
+                    <img src=" {{ img }}" >
+                </div>
+                <div class="information">
+                    
+                    <div class="data">
+                        <p style="text-align: center;color: brown; font-weight: 800;">Information in our system</p>
+                        <h3>Name:<p>{{ name }}</p> </h3>
+                    <h3>Username:<p> {{ username }}</p></h3>
+                    <h3>Email:<p> {{ email }}</p></h3>
+                    <h3>Password:<p> {{ password }}</p></h3>
+                    </div>
+                    <div class="edit">
+                        <h2>EDIT:</h2>
+                        <form action="" method="POST">
+                        <input type="text" name="name" value="{{name}}">
+                        <input type="text" name="username" value="{{username}}">
+                        <input type="email" name="email" value="{{email}}">
+                        <input type="password" name="password" value="{{password}}">
+                        <input type="file" name="image">
+                        <input type="submit" value="Edit" class="sendbtn">
+                    </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

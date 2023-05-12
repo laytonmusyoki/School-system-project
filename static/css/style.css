@@ -1,0 +1,593 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+i{
+    padding: 0 5px;
+    color: #49af49;
+    font-size: 18px;
+}
+.container{
+    background: powderblue;
+    box-shadow: 2px 2px 10px black;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:0 3%;
+    padding:5px 0 ;
+    
+}
+.account{
+    text-align: right;
+}
+.account ul{
+    display: inline-block;
+}
+.account li{
+    margin-right: 10px;
+    display: inline-block;
+}
+.account a{
+    text-decoration: none;
+    color: blue;
+    font-weight: bolder;
+    
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo h1{
+    color: #555;
+}
+
+.menu{
+    margin-left: 16px;
+    color: green;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.menu img{
+    width: 100%;
+}
+.links{
+    width: 300px;
+    height: 93vh;
+    top: 7%;
+    left: -350px;
+    position: fixed;
+    background: #555;
+    transition: all 0.5s ease;
+}
+.links a{
+    color: white;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+.links a:hover{
+    color: orange;
+}
+a.active{
+    color: orange;
+}
+.links li{
+    margin: 27px  40px;
+}
+.links .admin{
+    background: rgb(231, 229, 229);
+    width: 285px;
+    height: 80px;
+    border-radius: 10px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.admin .image{
+    width: 90px;
+    height: 90%;
+    border-radius: 50%;
+    text-align: left;
+    margin: auto 10px;
+    background: lightblue;
+}
+.admin .image h2{
+    color: green;
+    padding-top:20px;
+    padding-left: 4px;
+}
+.admin P{
+    color: green;
+    font-weight: bolder;
+    margin-left: 5px;
+}
+
+@media(max-width:750px){
+    .logo h1{
+        font-size: 15px;
+    }
+}
+
+/* REGISTER */
+.box{
+    width: 500px;
+    height: auto;
+    padding: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    box-shadow: 2px 2px 10px black;
+    border-radius: 5px;
+}
+.box h1{
+    text-align: center;
+    color: powderblue;
+}
+input{
+    width: 100%;
+    height: 40px;
+    margin-top: 19px;
+    padding: 0 4px;
+    border-radius: 5px;
+    outline: none;
+}
+.signup{
+    background: lightblue;
+}
+/* login */
+.box1{
+    width: 500px;
+    height: auto;
+    padding: 15px;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%,50%);
+    position: absolute;
+    box-shadow: 2px 2px 10px black;
+    border-radius: 5px;
+}
+.box1 input{
+        width: 100%;
+        height: 35px;
+        margin-top: 23px;
+        padding: 0 4px;
+        border-radius: 5px;
+        outline: none;
+    }
+    .box1 h1{
+        text-align: center;
+        color: powderblue;
+    }
+    .group{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .input-group1{
+        text-align: right;
+        min-width: 180px;
+        margin-left: 20px;
+    }
+    .icon img{
+        width: 100%;
+        border-radius: 20px;
+        text-align: center;
+    }
+    @media(max-width:750px){
+        .box1{
+            width: 300px;
+        }
+        .icon img{
+            width: 100%;
+            
+        }
+        .input-group1{
+            min-width: 150px;
+        }
+    }
+
+    /* dashboard */
+    
+    .container1{
+        max-width: 1050px;
+        margin: auto;
+        margin-top: 5px;
+    }
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .col-3{
+        padding: 30px;
+    }
+    .card{
+        border-top: 3px solid #49af49;
+        background: #fff;
+        width: 280px;
+        height: 150px;
+        border-radius: 4px;
+        box-shadow: 2px 2px 10px black;
+        transition: all 0.5s ease;
+    }
+    .card:hover{
+        transform: translateY(-5px);
+    }
+    .card h3{
+        color: green;
+        font-weight: bolder;
+        text-align: center;
+        padding: 20px;
+    }
+    .card .image {
+        width: 60px;
+        height: 60px;
+        margin: auto;
+    }
+    .card .image img {
+        width: 100%;
+    }
+    @media(max-width:750px){
+        .col-3{
+            margin: auto;
+        }
+    }
+
+    
+    /* student */
+    .sec{
+        margin: 10px 3%;
+    }
+.box3{
+    width: 850px;
+    height: 85vh;
+    box-shadow: 2px 2px 10px black;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.box4{
+    width: 350px;
+    height: 85vh;
+    margin-left: 5px;
+    box-shadow: 2px 2px 10px black;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+/* messages start */
+.box3 .frames{
+    padding: 2px 18px;
+}
+.box6 .frames{
+    padding: 2px 18px;
+}
+
+/* end */
+.box5{
+    width: 350px;
+    height: 85vh;
+    margin-left: 5px;
+    box-shadow: 2px 2px 10px black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    top: -30%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,50%);
+}
+.frame{
+    border: 2px solid rgb(26, 143, 104);
+    height: 82vh;
+
+}
+.frame h1{
+    padding: 13px;
+    background: rgb(26, 143, 104);
+}
+.select{
+    display: flex;
+    margin: 15px 45px;
+    align-items: center;
+}
+.select h4{
+    background: rgb(26, 143, 104);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding: 9px;
+}
+select{
+    height: 35px;
+    width: 670px;
+    outline: none;
+    border: 2px solid black;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.table{
+    margin: 10px;
+}
+.edit{
+    padding: 5px 10px;
+    background: yellow;
+    border-radius: 4px;
+}
+.del{
+    padding: 5px 10px;
+    background: rgb(248, 82, 53);
+    border-radius: 4px;
+}
+table{
+    width: 100%;
+    overflow-x: auto;
+}
+tr{
+    width: 100%;
+    line-height: 35px;
+    font-weight: 100;
+}
+  th{
+    text-align: left;
+    font-weight: bolder;
+    font-size: 20px;
+    color: rgb(14, 178, 233);
+}
+
+.inputs{
+    padding: 30px 20px;
+}
+.bg{
+    background: green;
+}
+/* results */
+.marks{
+    text-align: center;
+}
+.school{
+    display: flex;
+    margin-left: 8px;
+    justify-content: space-around;
+}
+.school h3 p{
+    color: #555;
+}
+.marks h3{
+    margin-bottom: 13px;
+}
+.marks input{
+    margin: 12px 20px;
+    height: 43px;
+    width: 40%;
+    border: 3px solid green;
+}
+.calculate{
+    width: 85%;
+    font-weight: bolder;
+    height: 40px;
+    margin-top:10px ;
+    outline: none;
+    border: none;
+    background: green;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+.calculate:hover{
+    background: #9e9d9d;
+    color: white;
+    border: 3px solid tomato;
+}
+.slip{
+    padding-left: 20px;
+}
+ .slip h3{
+    margin-top:10px ;
+    padding: 10px 2px;
+    font-size: 16px;
+}
+.slip h3 p{
+    padding-top: 5px;
+    color: rgb(151, 72, 15);
+}
+.slipbtn{
+    margin-top: 1vh;
+    position: fixed;
+    margin-left: 16rem;
+    padding: 3px 5px;
+}
+/* mails */
+.box6{
+    width: 950px;
+    height: 85vh;
+    margin: auto;
+    box-shadow: 2px 2px 10px black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    
+}
+.box6 h3{
+    color: orange;
+}
+.box6 .card2{
+    width: 550px;
+    height: auto;
+    box-shadow: 2px 2px 10px black;
+    margin: 50px auto;
+    padding: 10px;
+    border-radius: 4px;
+}
+.card2 input{
+    width: 100%;
+    margin-bottom:15px;
+    outline: none;
+    border: 2px solid black;
+    padding-left: 5px;
+}
+textarea{
+    width: 100%;
+    outline: none;
+    border: 2px solid black;
+    padding-left: 5px;
+}
+.sendbtn{
+    margin:15px 0;
+    background: green;
+    padding: 7px 25px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+/* subject */
+.row5{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    grid-gap: 60px;
+    margin-top: 50px ;
+    margin-left:60px ;
+}
+
+.subjects table{
+    width: 100%;
+}
+.subjects tr{
+    color: rgb(151, 72, 15);
+}
+.subjects th{
+    color: rgb(79, 186, 201);
+}
+.subjects td{
+    line-height: 24px;
+    font-weight: 600;
+}
+.sbjadd{
+    width: 250px;
+    height: 150px;
+}
+
+.message-error{
+    background: #F2DEDE;
+    color: #A94442;
+    padding: 10px ;
+    width: 100%;
+    border-radius: 5px;
+    margin: 5px auto;
+ }
+ .message-success{
+    background: #bce4c6;
+    color: #49af49;
+    padding: 10px ;
+    width: 100%;
+    border-radius: 5px;
+    margin: 5px auto;
+ }
+
+ /* setting */
+ .frame .information{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 800px;
+    margin: 30px auto;
+ }
+ .information h3 p{
+    font-size: 15px;
+    color:#555;
+ }
+ .information .data{
+    width: 290px;
+    height: 300px;
+    padding:10px ;
+    border: 2px solid powderblue;
+ }
+ .data h3{
+    margin-top: 15px;
+ }
+ .information .edit{
+    background: black;
+    width: 450px;
+    color: white;
+    margin-left: 50px;
+    box-shadow: 2px 2px 10px black;
+ }
+ .edit input{
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    
+
+ }
+ /* staff portal */
+ .portal{
+    margin: 7px 0;
+ }
+ .notification h3{
+    text-align: center;
+    
+ }
+.btn{
+    margin: 10px 5%;
+}
+.btn button{
+    padding: 10px 15px;
+    background: #49af49;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+.table2{
+    margin-left: 5%;
+}
+.table2 tr{
+    line-height: 20px;
+}
+ .container5{
+    width: 600px;
+    height: auto;
+    top: 55%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-55%,-50%);
+    padding: 10px;
+}
+.container6{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+.container6 h1{
+    font-weight: bolder;
+    font-size: 85px;
+    color: #fff;
+    text-align: center;
+}
+.container6 h2{
+    text-align: center;
+    color: #fff;
+}
+.container5 input{
+    margin: 6px 0;
+}
+.container5 textarea{
+    margin: 6px 0;
+    border-radius: 5px;
+}
+label{
+    font-weight: bold;
+}
+.frames5{
+    width: 1100px;
+    margin: 5px 5%;
+}

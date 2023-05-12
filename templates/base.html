@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}  {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <script src="https://kit.fontawesome.com/8a42449199.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1>MBHS HIGH </h1>
+                    <div class="menu" >
+                        <img src="{{ url_for('static',filename='image/menu.jpg') }}" id="menu">
+                    </div>
+                </div>
+                <div class="account">
+                    <ul>
+                        <li><p><i class="fa-solid fa-user"></i>{{username}}</p></li>
+                        <li><a href="{{ url_for('logout')}}">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="links" id="links">
+            <div class="admin">
+                <div class="image">
+                    <h2>Admin</h2>
+                </div>
+                <p>{{username}}</p>
+            </div>
+            <ul>
+                <li><a href="{{ url_for('dashboard') }}" class="active"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                <li><a href="{{ url_for('student') }}"><i class="fa-solid fa-graduation-cap"></i> Student manager</a></li>
+                <li><a href="{{ url_for('classmanager') }}"><i class="fa-regular fa-building"></i> Class manager</a></li>
+                <li><a href="{{ url_for('resultmanager') }}"><i class="fa-solid fa-square-poll-vertical"></i> Results manager</a></li>
+                <li><a href="{{ url_for('subject') }}"><i class="fa-solid fa-paperclip"></i> Subject manager</a></li>
+                <li><a href="{{ url_for('staffportal') }}"><i class="fa-solid fa-chalkboard-user"></i> Staff portal</a></li>
+                <li><a href="{{ url_for('dashboard') }}"> <i class="fa-solid fa-people-roof"></i> Non staff manager</a></li>
+                <li><a href="{{ url_for('dashboard') }}"><i class="fa-solid fa-bars-progress"></i> B.O.M manager</a></li>
+                <li><a href="{{ url_for('mails') }}"><i class="fa-solid fa-envelope-circle-check"></i> Mails</a></li>
+                <li><a href="{{ url_for('setting') }}"><i class="fa-solid fa-wrench"></i> Settings</a></li>
+            </ul>
+        </div>
+    </section>
+
+    
+<script >
+    var menu=document.getElementById('menu');
+    var links=document.getElementById('links');
+
+
+menu.onclick=function(){
+        if(links.style.left=="-350px"){
+            links.style.left="0";
+            menu.src="{{ url_for('static',filename='image/x-icon.jpg') }}";
+            }
+            else{
+                links.style.left="-350px"; 
+                menu.src="{{ url_for('static',filename='image/menu.jpg') }}";
+            }
+    }
+
+</script>
+
+{% block content %}
+{% endblock %}
+</body>
+</html>

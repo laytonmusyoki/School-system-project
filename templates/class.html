@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title  %} {{title}} {% endblock %}
+
+{% block content %}
+
+<section class="sec">
+    <div class="row">
+        <div class="col-4">
+            <div class="box3">
+                <div class="frame">
+                    <h1>VIEW ALL CLASSES</h1>
+
+
+                    <div class="frames">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category,message in messages %}
+                                        <div class="message-{{ category }}">
+                                            {{ message }}
+                                        </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                    
+                    <div class="table-responsive">
+                    <div class="table">
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Class No.</th>
+                                    <th>Class name</th>
+                                    <th>Class teacher</th>
+                                    <th>Date created</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for class in classes %}
+                                <tr>
+                                    <td>{{ class[0] }}</td>
+                                    <td>{{ class[1] }}</td>
+                                    <td>{{ class[2] }}</td>
+                                    <td>{{ class[3] }}</td>
+                                    <td>{{ class[4] }}</td>
+                                    <td>
+                                        <a href="{{ url_for('updatee',id=class[0]) }}" class="edit">Edit</a>
+                                        <a href="{{ url_for('deletee',id=class[0]) }}" onclick="return confirm('Are you sure you want to delete?')" class="del">Delete</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="box4">
+                <div class="frame">
+                    <h1>Add New Class</h1>
+
+                    <div class="inputs">
+                        <form action="" method="POST">
+                            <input type="text" name="class_no" placeholder="Enter class no.">
+                            <input type="text" name="name" placeholder="Enter class name">
+                            <input type="text" name="teacher" placeholder="Enter classteacher">
+                            <input type="submit" class="bg" value="Add Class">
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {{title}} {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <script src="https://kit.fontawesome.com/8a42449199.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1>MBHS HIGH </h1>
+                </div>
+                <div class="account">
+                    <ul>
+                        <li><a href="{{ url_for('login')}}"><i class="fa-thin fa-user"></i> Login</a></li>
+                        <li><a href="{{ url_for('register')}}">Sign up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<div class="box">
+    <div class="input-group">
+        <h1>SIGN UP</h1>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category,message in messages %}
+                        <div class="message-{{ category }}">
+                            {{ message }}
+                        </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+        <form action="" method="POST">
+            <input type="text" name="name" placeholder="Enter your full name" value="{{ name }}">
+            <input type="text" name="uname" placeholder="Enter your  username" value="{{ username }}">
+            <input type="email" name="email" placeholder="Enter your email" value="{{ email }}">
+            <input type="password" name="password" placeholder="Enter your password" value="{{ password }}">
+            <input type="file" name="image" file type="image" placeholder="Upload your passport">
+            <input type="submit" value="Register" class="signup">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
